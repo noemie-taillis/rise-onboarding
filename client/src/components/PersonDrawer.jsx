@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MapPin, Users, Calendar, ChevronLeft } from 'lucide-react';
 import { DISC_COLORS, TAG_COLORS, getInitials, getManager, getDirectReports } from '../data/team';
@@ -37,7 +38,7 @@ export default function PersonDrawer({ person, onClose, onNavigate }) {
   const reports    = getDirectReports(person.id);
   const discInfo   = DISC_LABELS[person.disc];
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {person && (
         <>
@@ -268,6 +269,7 @@ export default function PersonDrawer({ person, onClose, onNavigate }) {
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

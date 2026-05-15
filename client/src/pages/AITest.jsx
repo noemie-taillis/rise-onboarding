@@ -50,17 +50,7 @@ export default function AITest() {
   const progressPct = ((currentIdx + 1) / questions.length) * 100;
 
   return (
-    <Layout currentStep={2}>
-      {/* Back link */}
-      <div className="max-w-2xl mx-auto px-6 pt-4 pb-0">
-        <Link
-          to="/home"
-          className="font-inter inline-flex items-center gap-1"
-          style={{ color: '#9CA3C4', fontSize: '0.875rem', textDecoration: 'none' }}
-        >
-          ← Retour au hub
-        </Link>
-      </div>
+    <Layout currentStep={3}>
 
       {/* INTRO */}
       <AnimatePresence mode="wait">
@@ -96,8 +86,7 @@ export default function AITest() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              7 questions, 6 minutes. On teste ta culture IA et ton pragmatisme.
-              À la fin, tu reçois ton score Sharpness AI ⚡
+              7 questions. On ne juge pas. Enfin, un peu. À la fin, tu reçois ton score Sharpness AI ⚡
             </motion.p>
 
             {/* Themes card */}

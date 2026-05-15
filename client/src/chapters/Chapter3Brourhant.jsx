@@ -90,22 +90,6 @@ export default function Chapter3Brourhant() {
               borderColor: 'rgba(124,58,237,0.28)',
             }}
           >
-            {/* Badge CEO */}
-            {member.isCEO && (
-              <div
-                className="absolute top-4 right-4 font-inter rounded-full"
-                style={{
-                  background: '#7C3AED',
-                  color: '#F5F3FF',
-                  fontSize: '0.65rem',
-                  fontWeight: 700,
-                  padding: '3px 10px',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                CEO
-              </div>
-            )}
 
             {/* Avatar */}
             <PhotoAvatar member={member} />

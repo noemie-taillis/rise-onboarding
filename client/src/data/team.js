@@ -93,7 +93,7 @@ export const TEAM = [
     firstName: 'Olivier',
     lastName: 'BROURHANT',
     role: 'CEO',
-    tag: 'Family Office',
+    tag: 'Direction',
     disc: 'D',
     managerId: null,
     location: 'Lisbonne',

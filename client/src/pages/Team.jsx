@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 
 export default function Team() {
   return (
-    <Layout currentStep={1}>
+    <Layout currentStep={2}>
       <div className="flex flex-col items-center justify-center min-h-[82vh] px-6 text-center">
         <h1
           className="font-fraunces mb-4"

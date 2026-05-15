@@ -16,7 +16,7 @@ const KEYWORDS = [
   { text: 'patrimoine',       top: '18%',   right: '7%',   dur: 5.2 },
   { text: 'investissements',  top: '36%',   right: '4%',   dur: 6.1 },
   { text: 'héritage',         top: '55%',   right: '6%',   dur: 4.8 },
-  { text: 'sur-mesure',       bottom: '25%', left: '3%',   dur: 7.0 },
+  { text: 'sur-mesure',       bottom: '25%', right: '5%',  dur: 7.0 },
   { text: 'gold standard',    bottom: '12%', right: '8%',  dur: 5.7 },
 ];
 

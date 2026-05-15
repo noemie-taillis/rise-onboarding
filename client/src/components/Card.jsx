@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { ArrowDown } from 'lucide-react';
 
-export default function Card({ number, title, description, accent, route, delay = 0 }) {
+export default function Card({ number, icon, title, description, accent, route, delay = 0, step, isFirst }) {
   const navigate = useNavigate();
 
   return (
@@ -22,17 +23,36 @@ export default function Card({ number, title, description, accent, route, delay 
       }}
       whileTap={{ scale: 0.98 }}
     >
+      {/* "Tu es ici" pill on first card */}
+      {isFirst && (
+        <motion.div
+          className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full"
+          style={{ background: '#7C3AED', zIndex: 10 }}
+          animate={{ scale: [1, 1.05, 1], opacity: [0.9, 1, 0.9] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <span className="font-inter text-white" style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.02em' }}>
+            Tu es ici
+          </span>
+          <ArrowDown size={9} color="white" strokeWidth={2.5} />
+        </motion.div>
+      )}
+
       {/* Icon square */}
       <div
         className="flex items-center justify-center rounded-xl mb-5"
         style={{ width: 48, height: 48, background: `${accent}26` }}
       >
-        <span
-          className="font-inter"
-          style={{ color: accent, fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.05em' }}
-        >
-          {String(number).padStart(2, '0')}
-        </span>
+        {icon ? (
+          <span style={{ fontSize: '1.45rem', lineHeight: 1 }}>{icon}</span>
+        ) : (
+          <span
+            className="font-inter"
+            style={{ color: accent, fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.05em' }}
+          >
+            {String(number).padStart(2, '0')}
+          </span>
+        )}
       </div>
 
       {/* Title */}

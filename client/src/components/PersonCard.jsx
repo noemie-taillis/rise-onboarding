@@ -41,11 +41,11 @@ export function MiniCard({ person, onClick }) {
       }}>
         {getInitials(person)}
       </div>
-      <div>
-        <p style={{ margin: 0, fontSize: '0.8rem', fontWeight: 600, color: '#F5F3FF', lineHeight: 1.3 }}>
+      <div style={{ minWidth: 0 }}>
+        <p style={{ margin: 0, fontSize: '0.8rem', fontWeight: 600, color: '#F5F3FF', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           {person.firstName} {person.lastName}
         </p>
-        <p style={{ margin: 0, fontSize: '0.7rem', color: '#9CA3C4', lineHeight: 1.3 }}>
+        <p style={{ margin: 0, fontSize: '0.7rem', color: '#9CA3C4', lineHeight: 1.3, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           {person.role}
         </p>
       </div>
@@ -60,36 +60,35 @@ export default function PersonCard({ person, onClick }) {
   return (
     <motion.button
       onClick={() => onClick(person)}
-      whileHover={{ y: -4, boxShadow: `0 16px 40px ${tagColor.border}28` }}
+      whileHover={{ y: -3, boxShadow: `0 12px 32px ${tagColor.border}28` }}
       whileTap={{ scale: 0.98 }}
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       style={{
         background: '#1A1530',
         border: `1px solid rgba(255,255,255,0.08)`,
-        borderTop: `4px solid ${tagColor.border}`,
-        borderRadius: 12,
-        padding: '20px',
+        borderTop: `3px solid ${tagColor.border}`,
+        borderRadius: 10,
+        padding: '14px 16px',
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         gap: 12,
         cursor: 'pointer',
         textAlign: 'left',
         width: '100%',
       }}
     >
-      {/* Avatar with DISC ring */}
+      {/* Avatar */}
       <div style={{
-        width: 52,
-        height: 52,
+        width: 42,
+        height: 42,
         borderRadius: '50%',
-        border: `3px solid ${discColor}`,
+        border: `2px solid ${discColor}`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         background: `${discColor}18`,
-        fontSize: '1rem',
+        fontSize: '0.85rem',
         fontWeight: 700,
         color: discColor,
         fontFamily: 'Inter, sans-serif',
@@ -100,43 +99,33 @@ export default function PersonCard({ person, onClick }) {
       </div>
 
       {/* Name + Role */}
-      <div style={{ flex: 1, minWidth: 0 }}>
+      <div style={{ minWidth: 0 }}>
         <p style={{
           margin: 0,
-          fontSize: '0.95rem',
+          fontSize: '0.88rem',
           fontWeight: 600,
           color: '#F5F3FF',
           lineHeight: 1.3,
           fontFamily: 'Inter, sans-serif',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
         }}>
           {person.firstName} {person.lastName}
         </p>
         <p style={{
-          margin: '3px 0 0',
-          fontSize: '0.8rem',
+          margin: '2px 0 0',
+          fontSize: '0.75rem',
           color: '#9CA3C4',
           lineHeight: 1.4,
           fontFamily: 'Inter, sans-serif',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
         }}>
           {person.role}
         </p>
       </div>
-
-      {/* Tag pill */}
-      <span style={{
-        display: 'inline-block',
-        padding: '3px 10px',
-        borderRadius: 999,
-        background: tagColor.bg,
-        border: `1px solid ${tagColor.border}55`,
-        color: tagColor.text,
-        fontSize: '0.7rem',
-        fontWeight: 600,
-        fontFamily: 'Inter, sans-serif',
-        letterSpacing: '0.02em',
-      }}>
-        {person.tag}
-      </span>
     </motion.button>
   );
 }

@@ -8,6 +8,7 @@ import AITest    from './pages/AITest';
 import Checklist from './pages/Checklist';
 import FirstDay  from './pages/FirstDay';
 import Playbook  from './pages/Playbook';
+import WhatWeDo  from './pages/WhatWeDo';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
       <Route path="/checklist" element={<Checklist />} />
       <Route path="/first-day" element={<FirstDay />}  />
       <Route path="/playbook"  element={<Playbook />}  />
+      <Route path="/marques"   element={<WhatWeDo />}  />
     </Routes>
   );
 }
